@@ -1,0 +1,68 @@
+.About {
+  padding-block-start: .5em;
+  padding-block-end: 3.5em;
+  position: relative;
+}
+
+.Background {
+  background-color: var(--green);
+  position: absolute;
+  inset: 0;
+  top: -17px;
+  transform: skewY(-1.5deg);
+  border: 10px solid var(--dark-green);
+  border-left: none;
+  border-right: none;
+  z-index: -1;
+}
+
+.Content {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  max-width: 500px;
+  margin: auto;
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.Bio {
+
+}
+
+.ButtonGroup {
+  display: flex;
+  gap: .5em;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    background: var(--dark-green);
+    color: var(--white);
+    border: none;
+    border-radius: .3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: .5em 1em;
+
+    &:hover, &:active, &:focus {
+      background: var(--green);
+    }
+    &:hover, &:focus {
+      box-shadow: 0px 0px 6px 2px var(--dark-green);
+    }
+    &:active {
+      box-shadow: inset 0px 0px 10px 3px var(--dark-green);
+    }
+  }
+}
+
+.PortraitCircle {
+  min-width: 8em;
+  max-height: 8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 10px solid var(--dark-green);
+}

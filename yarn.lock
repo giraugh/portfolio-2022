@@ -685,6 +685,11 @@ json5@^2.2.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
+lucide@^0.61.0:
+  version "0.61.0"
+  resolved "https://registry.yarnpkg.com/lucide/-/lucide-0.61.0.tgz#97beb88a07238fa0b93274257b030bdd80350669"
+  integrity sha512-LiQ5eWUnDglox6SbxrZHccpcnJEc+oK7CzukXYFAj4Ni6UTBSZQ70XKiq+drDC8vMoJZNWlPzlaob4VpOJMEqQ==
+
 merge-anything@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/merge-anything/-/merge-anything-5.0.2.tgz#b023af9b8f48e2fc71eb859d4ad834ba667f4150"
