@@ -10,9 +10,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "sass": "^1.52.3",
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-solid": "^2.2.6",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "dependencies": {
     "solid-js": "^1.4.2"
