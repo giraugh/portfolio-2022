@@ -1,40 +1,32 @@
-.About {
-  padding-block-start: .5em;
-  padding-block-end: 3.5em;
-  position: relative;
-}
-
-.Background {
-  background-color: var(--green);
-  position: absolute;
-  inset: 0;
-  top: -17px;
-  transform: skewY(-1.5deg);
-  border: 10px solid var(--dark-green);
-  border-left: none;
-  border-right: none;
-  z-index: -1;
-}
+@import "@/styles/breakpoints.scss";
 
 .Content {
   display: flex;
   align-items: center;
   gap: 2em;
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   color: var(--white);
   font-size: 1.2rem;
-}
 
-.Bio {
-
+  @media (max-width: $bp-mobile) {
+    flex-direction: column;
+    padding-inline: 2em;
+    padding-block-start: 1.5em;
+    padding-block-end: 1em;
+    gap: 1em;
+  }
 }
 
 .ButtonGroup {
   display: flex;
   gap: .5em;
 
-  button {
+  @media (max-width: $bp-mobile) {
+    padding-top: .5em;
+  }
+
+  > button {
     display: flex;
     align-items: center;
     gap: .5em;
