@@ -34,7 +34,6 @@ const Stevent = () =>
         <Button href={STEVENT_LINK} background='var(--stevent-brand)'>Take me there! {createElement(ArrowRight)}</Button>
       </div>
       <div class={styles.ScreenshotContainer}>
-        {/* <img class={styles.Screenshot} src={steventScreenshotURL} alt='Screenshot of Stevent landing page' /> */}
         <div class={styles.Screenshot} />
       </div>
     </div>

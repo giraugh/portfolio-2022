@@ -5,7 +5,8 @@
 }
 
 .Background {
-  background-color: var(--background);
+  background: var(--background);
+  background-size: 40px 40px;
   border: 10px solid var(--border);
   position: absolute;
   inset: 0;

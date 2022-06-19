@@ -3,7 +3,7 @@
   --sky-blue: #9dc9d2;
   --green: #4D7960;
   --dark-green: #406B53;
-  --white: #FDFDFD;
+  --white: #FAFAFA;
   --black: #2A2A2A;
   --light-grey: #EEE;
 
@@ -12,6 +12,15 @@
   --fish-time-brand: #FA9F82;
   --fish-time-surface: #254779;
   --fish-time-waves: #173665;
+  --automatarium-brand: #FFA800;
+  --automatarium-surface: #FFD380;
+  --automatarium-border: #C4C4C4;
+  --automatarium-grid-dot: #DDDDDD;
+  --automatarium-dot-fraction: 12.5%;
+  --automatarium-grid-pattern: radial-gradient(
+    var(--automatarium-grid-dot),
+    var(--automatarium-grid-dot) var(--automatarium-dot-fraction),
+    var(--white) var(--automatarium-dot-fraction));
 
   --global-skew: -1.5deg;
 
