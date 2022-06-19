@@ -4,7 +4,7 @@ import { SkewedSection } from 'components'
 import styles from './About.module.scss'
 
 const About = () =>
-  <SkewedSection background='var(--green)' border='var(--dark-green)'>
+  <SkewedSection onTop background='var(--green)' border='var(--dark-green)'>
     <div class={styles.Content}>
       <div class={styles.PortraitCircle} />
       <div>

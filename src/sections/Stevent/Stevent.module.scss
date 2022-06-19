@@ -1,66 +1,17 @@
-@import '@/styles/breakpoints.scss';
+@import '@/styles/mixins/text_and_screenshot.scss';
+
+/* Use mixin to create .Content, .Title, .Text, .Screenshot and .ScreenshotContainer, */
+@include text-and-screenshot();
 
 .Content {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-areas: 'title screenshot'
-                       'text  screenshot';
-  column-gap: 4em;
-  align-items: center;
-
-  width: clamp(700px, 80vw, 1200px);
-  margin: auto;
-  padding-block-start: 1.5em;
-  padding-block-end: 1em;
-
   b {
     color: var(--stevent-brand);
   }
-
-  @media (max-width: $bp-mobile) {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'title'
-                         'screenshot'
-                         'text';
-    width: 80%;
-    row-gap: 1.5em;
-  }
-}
-
-.Title {
-  grid-area: title;
-  width: 100%;
-
-  @media (max-width: $bp-mobile) {
-    width: 85%;
-    margin: auto;
-  }
-}
-
-.Text {
-  grid-area: text;
-  max-width: 500px;
-
-  p {
-    margin-block: .5em;
-  }
-}
-
-.ScreenshotContainer {
-  grid-area: screenshot;
 }
 
 .Screenshot {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: skewY(calc(var(--global-skew) / 1));
-  border-radius: 1.5rem;
+  background-image: url('@/assets/images/stevent-screenshot.png');
   border: 5px solid var(--stevent-brand);
-
-  @media (max-width: $bp-mobile) {
-    transform: none;
-  }
 }
 
 .Button {
@@ -79,15 +30,4 @@
     text-decoration: none;
     color: var(--stevent-brand);
   }
-}
-
-.BigLink {
-  display: flex;
-  align-items: center;
-  padding: .3em;
-  gap: .3em;
-  font-size: 1.1rem;
-  color: var(--stevent-brand);
-  font-weight: bold;
-  text-decoration: underline;
 }

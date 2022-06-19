@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js'
 
-import { Banner, About, Stevent } from 'sections'
+import { Banner, About, Stevent, FishTime } from 'sections'
 
 import styles from './App.module.scss'
 
@@ -10,6 +10,7 @@ const App: Component = () => {
       <Banner />
       <About />
       <Stevent />
+      <FishTime />
     </main>
   )
 }

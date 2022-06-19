@@ -3,13 +3,12 @@ import styles from './Button.module.scss'
 
 type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   background: string,
-  darkBackground: string,
   href?: string,
 }
-const Button: Component<ButtonProps> = ({ href, background, darkBackground, ...props }) => {
+const Button: Component<ButtonProps> = ({ href, background, ...props }) => {
   const button =
     <button
-      style={{ '--background': background, '--background-dark': darkBackground }}
+      style={{ '--background': background }}
       class={styles.Button}
       {...props} />
 

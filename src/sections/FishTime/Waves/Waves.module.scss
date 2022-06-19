@@ -1,0 +1,29 @@
+@import '@/styles/breakpoints.scss';
+
+.Svg {
+  --clr-waves-bright: var(--fish-time-waves);
+  --clr-background: var(--fish-time-background);
+
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+
+  left: 0;
+  width: 100%;
+  height: min-content;
+  filter: drop-shadow(0px -8px 0px var(--clr-background));
+}
+
+.WavesContainer {
+  animation: slide 16s linear infinite;
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}

@@ -9,9 +9,14 @@
   border: 10px solid var(--border);
   position: absolute;
   inset: 0;
-  top: -17px;
   transform: skewY(var(--global-skew));
   border-left: none;
   border-right: none;
+  border-top: none;
   z-index: -1;
+
+  &:global(.onTop) {
+    border-top: 10px solid var(--border) !important;
+    top: -17px;
+  }
 }

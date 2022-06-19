@@ -12,7 +12,7 @@ const EPOXY_LINK = 'https://github.com/stevent-team/epoxy'
 const CHARTLET_LINK = 'https://github.com/stevent-team/react-chartlet'
 
 const Stevent = () =>
-  <SkewedSection background='var(--white)' border='var(--grey)'>
+  <SkewedSection background='var(--white)' border='var(--light-grey)'>
     <div class={styles.Content}>
       <img class={styles.Title} src={steventBannerURL} alt='Stevent Logo and Title'/>
       <div class={styles.Text}>
@@ -31,10 +31,11 @@ const Stevent = () =>
             <a target='_blank' href={CHARTLET_LINK}><code>react-chartlet</code></a>! 
           </p>
         </div>
-        <Button href={STEVENT_LINK} background='var(--stevent-brand)' darkBackground='darkblue'>Take me there! {createElement(ArrowRight)}</Button>
+        <Button href={STEVENT_LINK} background='var(--stevent-brand)'>Take me there! {createElement(ArrowRight)}</Button>
       </div>
       <div class={styles.ScreenshotContainer}>
-        <img class={styles.Screenshot} src={steventScreenshotURL} alt='Screenshot of Stevent landing page' />
+        {/* <img class={styles.Screenshot} src={steventScreenshotURL} alt='Screenshot of Stevent landing page' /> */}
+        <div class={styles.Screenshot} />
       </div>
     </div>
   </SkewedSection>

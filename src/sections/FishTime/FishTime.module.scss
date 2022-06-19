@@ -1,0 +1,48 @@
+@import '@/styles/mixins/text_and_screenshot.scss';
+
+/* Use mixin to create .Content, .Title, .Text, .Screenshot and .ScreenshotContainer, */
+@include text-and-screenshot();
+
+.Content {
+  margin-block-start: 1em;
+  margin-block-end: 3em;
+
+  b {
+    color: var(--fish-time-brand);
+  }
+  
+  /* Desktop */
+  @media (min-width: $bp-mobile) {
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: "screenshot title"
+                        "screenshot text";
+  }
+}
+
+.Title {
+  /* Desktop */
+  @media (min-width: $bp-mobile) {
+    margin-bottom: .5em;
+  }
+}
+
+.Text {
+  color: var(--white);
+  background: var(--fish-time-surface);
+  padding: 1.5em;
+  border-radius: 1rem;
+
+  button {
+    margin-top: 2em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.Screenshot {
+  border: 5px solid var(--fish-time-brand);
+  background-image: url('@/assets/images/fish-time-screenshot.png');
+  background-position: left;
+}
