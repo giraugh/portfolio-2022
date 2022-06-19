@@ -1,0 +1,93 @@
+@import '@/styles/breakpoints.scss';
+
+.Content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: 'title screenshot'
+                       'text  screenshot';
+  column-gap: 4em;
+  align-items: center;
+
+  width: clamp(700px, 80vw, 1200px);
+  margin: auto;
+  padding-block-start: 1.5em;
+  padding-block-end: 1em;
+
+  b {
+    color: var(--stevent-brand);
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'title'
+                         'screenshot'
+                         'text';
+    width: 80%;
+    row-gap: 1.5em;
+  }
+}
+
+.Title {
+  grid-area: title;
+  width: 100%;
+
+  @media (max-width: $bp-mobile) {
+    width: 85%;
+    margin: auto;
+  }
+}
+
+.Text {
+  grid-area: text;
+  max-width: 500px;
+
+  p {
+    margin-block: .5em;
+  }
+}
+
+.ScreenshotContainer {
+  grid-area: screenshot;
+}
+
+.Screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skewY(calc(var(--global-skew) / 1));
+  border-radius: 1.5rem;
+  border: 5px solid var(--stevent-brand);
+
+  @media (max-width: $bp-mobile) {
+    transform: none;
+  }
+}
+
+.Button {
+  --background: var(--stevent-brand);
+}
+
+.InfoBox {
+  margin-block: 1.5em;
+  padding: 1em;
+  border: 2px dashed var(--stevent-brand);
+  border-radius: .5rem;
+  font-size: .9rem;
+  > p { margin: 0; }
+  > p > a {
+    margin-left: .3em;
+    text-decoration: none;
+    color: var(--stevent-brand);
+  }
+}
+
+.BigLink {
+  display: flex;
+  align-items: center;
+  padding: .3em;
+  gap: .3em;
+  font-size: 1.1rem;
+  color: var(--stevent-brand);
+  font-weight: bold;
+  text-decoration: underline;
+}

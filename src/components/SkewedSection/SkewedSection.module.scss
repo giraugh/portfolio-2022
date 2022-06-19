@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
   top: -17px;
-  transform: skewY(-1.5deg);
+  transform: skewY(var(--global-skew));
   border-left: none;
   border-right: none;
   z-index: -1;

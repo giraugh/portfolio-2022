@@ -37,10 +37,12 @@
   }
 
   > button {
+    --bg: var(--green);
+    --bg-dark: var(--dark-green);
     display: flex;
     align-items: center;
     gap: .5em;
-    background: var(--dark-green);
+    background: var(--bg-dark);
     color: var(--white);
     border: none;
     border-radius: .3rem;
@@ -49,13 +51,13 @@
     padding: .5em 1em;
 
     &:hover, &:active, &:focus {
-      background: var(--green);
+      background: var(--bg);
     }
     &:hover, &:focus {
-      box-shadow: 0px 0px 6px 2px var(--dark-green);
+      box-shadow: 0px 0px 6px 2px var(--bg-dark);
     }
     &:active {
-      box-shadow: inset 0px 0px 10px 3px var(--dark-green);
+      box-shadow: inset 0px 0px 10px 3px var(--bg-dark);
     }
   }
 }

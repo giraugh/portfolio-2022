@@ -1,9 +1,12 @@
 import { Component, JSX } from 'solid-js'
 import styles from './SkewedSection.module.scss'
 
-type Props = { children: JSX.Element, background: string, border: string }
-const SkewedSection: Component<Props> = ({ children, background, border, ...props }) =>
-  <section class={styles.SkewedSection} style={{ '--background': background, '--border': border }} {...props}>
+type SkewedSectionProps = JSX.HTMLAttributes<HTMLElement> & {
+  background: string,
+  border: string,
+}
+const SkewedSection: Component<SkewedSectionProps> = ({ background, border, children, ...props }) =>
+  <section  style={{ '--background': background, '--border': border }} class={styles.SkewedSection} {...props}>
     <div class={styles.Background}/>
     <div>
       {children}

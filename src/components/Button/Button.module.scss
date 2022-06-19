@@ -1,0 +1,27 @@
+.Button {
+  display: flex;
+  align-items: center;
+  gap: .3em;
+  padding: .6em 1em;
+  background: var(--background);
+  border-radius: .5rem;
+  border: none;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-block-start: .3em;
+  box-shadow: 0px 3px 5px 0px #00000045;
+  transition: outline .1s;
+
+  &:hover {
+    background: var(--white);
+    color: var(--background);
+    outline: 4px solid var(--background);
+    cursor: pointer;
+  }
+}
+
+.ButtonLink {
+  text-decoration: none;
+  color: var(--white);
+}
