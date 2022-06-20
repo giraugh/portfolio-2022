@@ -1,16 +1,37 @@
-import { createSignal, Show } from 'solid-js'
+import { createEffect, createSignal, onCleanup, onMount, Show, Signal } from 'solid-js'
 import { Portal } from 'solid-js/web'
-import { ChevronDown, ChevronUp, createElement, Expand } from 'lucide'
+import { ChevronDown, ChevronUp, createElement } from 'lucide'
 
 import { SkewedSection, Button } from 'components'
 
 import styles from './Gallery.module.scss'
 
 const Gallery = () => {
+  let bannerSectionRef: HTMLElement | undefined = undefined
+  let gallerySectionRef: HTMLElement | undefined = undefined
+  let buttonRef: HTMLElement | undefined = undefined
   const [isOpen, setIsOpen] = createSignal(false)
 
+  /* Track whether close button should be visible */
+  const [sectionVisible, setSectionVisible] = createSignal(false)
+  const [buttonVisible, setButtonVisible] = createSignal(false)
+  const showCloseButton = () => sectionVisible() && !buttonVisible()
+  createEffect(() => {
+    const handleObservations = (entries: IntersectionObserverEntry[]) => {
+      setSectionVisible(entries.find(e => e.target === gallerySectionRef)?.isIntersecting ?? sectionVisible())
+      setButtonVisible(entries.find(e => e.target === buttonRef)?.isIntersecting ?? buttonVisible())
+    }
+
+    if (isOpen()) {
+      const observer = new IntersectionObserver(handleObservations, { threshold: .05 })
+      if (gallerySectionRef) observer.observe(gallerySectionRef)
+      if (buttonRef) observer.observe(buttonRef)
+      return () => observer.disconnect()
+    }
+  })
+
   return <>
-    <SkewedSection background='var(--bright-blue)' border='transparent'>
+    <SkewedSection ref={bannerSectionRef} background='var(--bright-blue)' border='transparent'>
       <div class={styles.Content}>
         <div class={styles.Text}>
           <h2 class={styles.Heading}>Design Gallery</h2>
@@ -18,7 +39,7 @@ const Gallery = () => {
             A showcase of my design and illustration work for various university communities, discord servers and personal projects.
             Primarily features vector and pixel art pieces.
           </p>
-          <Button onClick={() => setIsOpen(!isOpen())} background='var(--snake-blue)'>
+          <Button ref={buttonRef} onClick={() => setIsOpen(!isOpen())} background='var(--snake-blue)'>
             <Show when={!isOpen()}>Open Gallery {createElement(ChevronDown)}</Show>
             <Show when={isOpen()}>Close Gallery {createElement(ChevronUp)}</Show>
           </Button>
@@ -27,7 +48,12 @@ const Gallery = () => {
       <div class={styles.Snake} />
     </SkewedSection>
     <Show when={isOpen()}>
-      <SkewedSection topBorder background='var(--deep-blue)' border='var(--dark-blue)'>
+      <button
+        onClick={() => { bannerSectionRef?.scrollIntoView(); setIsOpen(false) }}
+        class={`${styles.CloseButton} ${showCloseButton() ? 'visible' : 'hidden'}`}>
+          {createElement(ChevronUp)}
+      </button>
+      <SkewedSection topBorder background='var(--deep-blue)' border='var(--dark-blue)' ref={gallerySectionRef}>
         <GalleryContent />
       </SkewedSection>
     </Show>
@@ -176,6 +202,10 @@ const GalleryCard = ({ src, square }: { src: string, square?: boolean }) => {
   const [showModal, setShowModal] = createSignal(false)
 
   /* TODO: listen for any click, not just on modal to dismiss */
+
+  createEffect(() => {
+    document.body.classList.toggle('no-scroll', showModal())
+  })
 
   return <>
     <div

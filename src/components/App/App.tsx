@@ -14,6 +14,9 @@ const App: Component = () => {
       <Automatarium />
       <Gallery />
       <Stevent />
+      <Stevent />
+      <Stevent />
+      <Stevent />
     </main>
   )
 }
