@@ -17,7 +17,7 @@ const FishTime = () =>
         <p>
           Fish Time is a WIP <b>time tracking web app</b> with an ocean aesthetic.
           Unlike its land-loving contemporaries, Fish Time has a focus on collaboration features, ease-of-use and mobile support.
-          While still in-progress, Fish Time is open source and contributions are welcome and greatly encouraged!
+          Whilst still in-progress, Fish Time is <b>open source</b> and contributions are greatly encouraged!
         </p>
         <Button href={FISH_TIME_LINK} background='var(--fish-time-brand)'>Show me the fish! {createElement(Github)}</Button>
       </div>

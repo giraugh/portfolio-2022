@@ -1,0 +1,138 @@
+@import '@/styles/mixins/text_and_screenshot.scss';
+
+/* Use mixin to create .Content, .Title, .Text, .Screenshot and .ScreenshotContainer, */
+@include text-and-screenshot();
+
+.Content {
+  color: white;
+
+  @media (max-width: $bp-mobile) {
+    row-gap: 0;
+    padding-block-start: 1em;
+    padding-block-end: 15em;
+  }
+}
+
+.Text {
+  p {
+    margin-block-end: 2em;
+  }
+}
+
+.Heading {
+  font-size: 2.2rem;
+  margin-block: .5em;
+}
+
+.Snake {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  height: 350px;
+  background-image: url('@/assets/images/snake.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: $bp-mobile) {
+    width: 350px;
+    height: 300px;
+  }
+}
+
+/* Gallery */
+
+.GallerySection {
+  border-top: solid 10px var(--dark-blue);
+}
+
+.GalleryContent {
+  width: clamp(650px, 80vw, 1200px);
+  margin: auto;
+  padding: 2.5em 2em;
+  color: var(--white);
+
+  @media (max-width: $bp-mobile) {
+    width: auto;
+  }
+}
+
+.Description {
+  h3 {
+    font-size: 1.8rem;
+    margin-block: .5em;
+  }
+
+  p {
+    width: 55%;
+    margin-block: .5em;
+  }
+}
+
+.ImageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: .75em;
+  margin-block-start: 1em;
+  --row-height: 14em;
+
+  @media (min-width: $bp-large) {
+    &:global(.expand) {
+      grid-template-columns: 1fr 1fr;
+
+      > div:nth-child(2n+1) {
+        order: -1;
+      }
+    }
+
+    &:not(:global(.expand)) {
+      --row-height: 17em;
+    }
+  }
+
+  /* Rows */
+  > div {
+    display: flex; 
+    height: var(--row-height);
+    gap: .75em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(:last-child) {
+    margin-block-end: 4em;
+  }
+}
+
+.GalleryCard {
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-color: white;
+
+  transition: transform .1s;
+  &:hover {
+    // background-size: 103%;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  &:global(.square) {
+    width: var(--row-height);
+    aspect-ratio: 1;
+  }
+}
+
+.LargeOnly {
+  @media (max-width: $bp-large) {
+    display: none !important;
+  }
+}

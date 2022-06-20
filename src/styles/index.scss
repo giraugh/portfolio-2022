@@ -1,6 +1,10 @@
 :root {
   --wall-brown-dark: #b7775b;
   --sky-blue: #9dc9d2;
+  --bright-blue: #4088CA;
+  --dark-blue: #336695;
+  --deep-blue: #124372;
+  --snake-blue: #483AC6;
   --green: #4D7960;
   --dark-green: #406B53;
   --white: #FAFAFA;
@@ -36,6 +40,6 @@ body {
   background: var(--sky-blue);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: var(--fnt-heading);
 }

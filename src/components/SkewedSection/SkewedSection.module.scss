@@ -17,7 +17,10 @@
   z-index: -1;
 
   &:global(.onTop) {
-    border-top: 10px solid var(--border) !important;
     top: -17px;
+  }
+
+  &:global(.topBorder) {
+    border-top: 10px solid var(--border) !important;
   }
 }
