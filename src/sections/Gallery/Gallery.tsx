@@ -1,4 +1,5 @@
 import { createSignal, Show } from 'solid-js'
+import { Portal } from 'solid-js/web'
 import { ChevronDown, ChevronUp, createElement, Expand } from 'lucide'
 
 import { SkewedSection, Button } from 'components'
@@ -171,7 +172,24 @@ const GalleryContent = () => <>
   </div>
 </>
 
-const GalleryCard = ({ src, square }: { src: string, square?: boolean }) =>
-  <div style={{ 'background-image': `url(${src})` }} class={`${styles.GalleryCard} ${square ? 'square' : ''}`} />
+const GalleryCard = ({ src, square }: { src: string, square?: boolean }) => {
+  const [showModal, setShowModal] = createSignal(false)
+
+  /* TODO: listen for any click, not just on modal to dismiss */
+
+  return <>
+    <div
+      onClick={() => setShowModal(true)}
+      style={{ 'background-image': `url(${src})` }}
+      class={`${styles.GalleryCard} ${square ? 'square' : ''}`} />
+    <Show when={showModal()}>
+      <Portal mount={document.body}>
+        <div class={styles.ImageModal} onClick={() => setShowModal(false)}>
+          <img src={src} />
+        </div>
+      </Portal>
+    </Show>
+  </>
+}
 
 export default Gallery
