@@ -1,0 +1,155 @@
+@import "@/styles/breakpoints.scss";
+
+.Content {
+  height: 100%;
+  min-height: 180vh;
+  width: clamp(650px, 80vw, 1200px);
+  margin: auto;
+  padding-block-start: 2.5em;
+  padding-block-end: 1em;
+
+  @media (max-width: $bp-mobile) {
+    width: 80%;
+    padding-block-start: 1em;
+  }
+}
+
+.Text {
+  color: white;
+  max-width: 700px;
+
+  > p {
+    margin-block-end: 1.5em;
+    width: 70%;
+
+    @media (max-width: $bp-mobile) {
+      width: 100%;
+      margin-block-end: 1em;
+    }
+  }
+}
+
+.WarningBox {
+  padding: .2em 1em;
+  border: 2px dashed var(--deep-purple);
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  font-size: .9rem;
+  box-sizing: border-box;
+
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (max-width: $bp-mobile) {
+    width: 100%;
+    svg { display: none; }
+  }
+}
+
+.ProjectsContainer {
+  display: grid;
+  margin-block-start: 330px;
+  margin-block-end: 270px;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  gap: 1em;
+}
+
+.ProjectCard {
+  display: block;
+  background-color: var(--purple);
+  background-size: cover;
+  background-position: center;
+  border-radius: .3rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color .2s;
+  overflow: hidden;
+
+  p {
+    margin-block-start: .5em;
+  }
+
+  .ProjectCardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: linear-gradient(hsl(0deg 0% 0% / 30%), hsl(0deg 0% 0% / 80%) 75%);
+    mix-blend-mode: darken;
+    padding: 1em;
+    padding-bottom: .2em;
+    min-height: 15em;
+    height: 100%;
+    box-sizing: border-box;
+    transition: opacity .2s;
+
+    &:global(.dark) {
+      mix-blend-mode: hard-light;
+    }
+  }
+
+  &:hover {
+    color: transparent;
+    .ProjectCardContent {
+      opacity: 0;
+    }
+  }
+
+}
+
+.ProjectTitle {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+
+.Heading {
+  font-size: 2.2rem;
+  margin-block: .5em;
+}
+
+.SpikesContainer {
+  position: absolute;
+  top: 50px;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+
+  > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &:global(.floor) {
+    top: initial;
+    bottom: 50px;
+    transform: rotate(180deg);
+  }
+}
+
+.FullHeight {
+  position: absolute;
+  inset: 0;
+  top: 50px;
+  bottom: 60px;
+  z-index: -1;
+  background: var(--deepest-purple);
+}
+
+.DesktopOnly {
+  @media (max-width: $bp-mobile) {
+    display: none; 
+  }
+}

@@ -2,7 +2,6 @@ import { createElement, ArrowRight } from 'lucide'
 
 import { SkewedSection, Button } from 'components'
 import steventBannerURL from 'assets/images/stevent-banner.svg'
-import steventScreenshotURL from 'assets/images/stevent-screenshot.png'
 
 import styles from './Stevent.module.scss'
 

@@ -29,14 +29,19 @@
     gap: .4em;
     flex-wrap: wrap;
 
-    > button {
+    button {
       font-size: .9rem;
       flex: 1;
       justify-content: center;
     }
   }
 
-  > button {
+  a {
+    text-decoration: none;
+    display: contents;
+  }
+
+  button {
     --bg: var(--green);
     --bg-dark: var(--dark-green);
     display: flex;
@@ -49,6 +54,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     padding: .5em 1em;
+    cursor: pointer;
 
     &:hover, &:active, &:focus {
       background: var(--bg);
@@ -69,4 +75,6 @@
   border-radius: 50%;
   background-color: var(--white);
   border: 10px solid var(--dark-green);
+  background-size: cover;
+  background-position: center;
 }

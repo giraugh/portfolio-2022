@@ -1,0 +1,28 @@
+.Content {
+  color: var(--white);
+  padding: 2em;
+  max-width: 700px;
+
+  a {
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+  }
+}
+
+.Heading {
+  font-size: 2.5rem;
+}
+
+.Legal {
+  margin-block-start: 1.5em;
+  font-style: italic;
+}
+
+.FullHeight {
+  position: absolute;
+  inset: 0;
+  background: var(--purple);
+  z-index: -1;
+  transform: translateY(30px);
+}
