@@ -31,7 +31,7 @@ export default [
     name: 'Pacmascii',
     description: 'Pacman but ASCII',
     image: 'https://cdn.giraugh.xyz/compressed/pacmascii.webp',
-    link: 'https://ewanb.me/Pasmascii',
+    link: 'https://ewanb.me/Pacmascii',
     dark: true,
   },
   {
@@ -53,13 +53,6 @@ export default [
     description: 'Platforming MOBA made in GameMaker Studio.',
     image: 'https://cdn.giraugh.xyz/compressed/knight.webp',
     link: 'https://tdos.itch.io/knight-game',
-    dark: false,
-  },
-  {
-    name: 'Another Expert Telegram',
-    description: 'Match-several game for android devices.',
-    image: 'https://cdn.giraugh.xyz/compressed/expert.avif',
-    link: 'https://play.google.com/store/apps/details?id=com.tdos.anothertelegram',
     dark: false,
   },
   {

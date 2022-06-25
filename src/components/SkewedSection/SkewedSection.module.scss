@@ -1,3 +1,5 @@
+@import '@/styles/breakpoints.scss';
+
 .SkewedSection {
   padding-block-start: .5em;
   padding-block-end: 3.5em;
@@ -18,6 +20,10 @@
 
   &:global(.onTop) {
     top: -17px;
+
+    @media (min-width: $bp-large) {
+      top: -30px;
+    }
   }
 
   &:global(.topBorder) {
