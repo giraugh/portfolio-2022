@@ -19,9 +19,9 @@ const About = () =>
           I love to collaborate on creative projects, promote diversity/accessibility and hone my skills.
         </p>
         <div class={styles.ButtonGroup}>
-          <a href={GITHUB_URL}><button>{createElement(Github)}Github</button></a>
-          <a href={LINKED_IN_URL}><button>{createElement(Linkedin)}LinkedIn</button></a>
-          <a href={RESUME_URL}><button>{createElement(FileText)}Resume</button></a>
+          <a target="_blank" rel="noreferrer nofollow" href={GITHUB_URL}><button>{createElement(Github)}Github</button></a>
+          <a target="_blank" rel="noreferrer nofollow" href={LINKED_IN_URL}><button>{createElement(Linkedin)}LinkedIn</button></a>
+          <a target="_blank" rel="noreferrer nofollow" href={RESUME_URL}><button>{createElement(FileText)}Resume</button></a>
         </div>
       </div>
     </div>

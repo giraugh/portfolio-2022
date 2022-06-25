@@ -1,5 +1,5 @@
 import { createEffect, For, onMount } from 'solid-js'
-import { createElement, AlertTriangle } from 'lucide'
+import { createElement, Info } from 'lucide'
 
 import { SkewedSection } from 'components'
 
@@ -16,7 +16,7 @@ const Cave = () => {
           Check out some of my video game projects mixed in with some other interesting projects.
         </p>
         <div class={styles.WarningBox}>
-          {createElement(AlertTriangle)}
+          {createElement(Info)}
           <p>
             Some of these projects date back to the start of my career so they might not all represent 
             the quality of my work in {String(new Date().getFullYear())} :&rpar;
@@ -59,7 +59,7 @@ const ProjectCard = ({ title='', description='', src='', href='', dark=false }) 
     return () => window.removeEventListener('load', onLoad)
   }) 
 
-  return <a ref={cardRef} class={styles.ProjectCard} href={href}>
+  return <a ref={cardRef} class={styles.ProjectCard} href={href} target="_blank" rel="noreferrer nofollow">
     <div class={`${styles.ProjectCardContent} ${dark ? 'dark' : 'light'}`}>
       <span class={styles.ProjectTitle}>{title}</span>
       <p>{description}</p>

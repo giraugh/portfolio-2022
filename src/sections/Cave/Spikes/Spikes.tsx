@@ -25,17 +25,19 @@ const Spikes = ({
 
   // Apply parallax effect
   createEffect(() => {
-    if (parallaxIntensity !== 0) {
-      const onScroll = () => {
-        if (svgRef && parallaxIntensity !== 0) {
-          const top = document.scrollingElement?.scrollTop ?? 0
-          const deltaY = (svgRef?.getBoundingClientRect().top ?? top)
-          svgRef.style.transform = `translateY(${deltaY / (parallaxIntensity * 1)}px)` // (`translateY(${deltaY / 2})`)
-        }
+    let timer: number
+    const onScroll = () => {
+      if (svgRef && parallaxIntensity !== 0) {
+        const top = document.scrollingElement?.scrollTop ?? 0
+        const deltaY = (svgRef?.getBoundingClientRect().top ?? top)
+        svgRef.style.transform = `translateY(${Math.round(deltaY / (parallaxIntensity * 1))}px)` // (`translateY(${deltaY / 2})`)
       }
-      window.addEventListener('scroll', onScroll)
-      return () => window.removeEventListener('scroll', onScroll)
+      timer = window.requestAnimationFrame(onScroll)
     }
+
+    if (svgRef && parallaxIntensity != 0)
+      onScroll()
+    return () => timer && window.cancelAnimationFrame(timer)
   })
 
   // Keep track of svg width
