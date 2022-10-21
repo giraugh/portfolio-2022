@@ -1,5 +1,40 @@
 export default [
   {
+    name: 'Flow Field Fun',
+    description: 'Cool little visualiser for particle physics in a flow field',
+    image: 'https://cdn.giraugh.xyz/Flow-Field-Fun.png',
+    link: 'https://ewanb.me/flow-field-fun',
+    dark: true,
+  },
+  {
+    name: 'Duckboi',
+    description: 'Pico-8 game about protecting your ducks from monsters',
+    image: 'https://cdn.giraugh.xyz/duckboi.png',
+    link: 'https://ewanb.me/duckboi',
+    dark: false,
+  },
+  {
+    name: 'Diffusion Snowflakes',
+    description: 'Generation of snowflakes using diffusion-limited aggregation',
+    image: 'https://cdn.giraugh.xyz/diffusion-snowflakes.png',
+    link: 'https://ewanb.me/diffusion-snowflakes',
+    dark: true,
+  },
+  {
+    name: 'Hue Map',
+    description: 'Tool for interpolating gradients using common palettes',
+    image: 'https://cdn.giraugh.xyz/hue-map-sample.png',
+    link: 'https://ewanb.me/hue-map',
+    dark: true,
+  },
+  {
+    name: 'Ant',
+    description: 'Simple langton\'s ant simulation',
+    image: 'https://cdn.giraugh.xyz/ant.png',
+    link: 'https://ewanb.me/ant',
+    dark: true,
+  },
+  {
     name: 'Squish',
     description: 'Platforming party game that pits players "head" to "head".',
     image: 'https://cdn.giraugh.xyz/compressed/squish.avif',
