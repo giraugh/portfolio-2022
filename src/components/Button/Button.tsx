@@ -13,7 +13,9 @@ const Button: Component<ButtonProps> = ({ href, background, ...props }) => {
       {...props} />
 
   return href
-    ? <a href={href} target='_blank' class={styles.ButtonLink}>{button}</a>
+    ? <a href={href} target='_blank' class={`${styles.Button} ${styles.ButtonLink}`} style={{ '--background': background }}>
+        {props.children}
+      </a>
     : button
 }
 
