@@ -208,9 +208,9 @@ const GalleryCard = ({ src, square }: { src: string, square?: boolean }) => {
   })
 
   return <>
-    <div
+    <img
       onClick={() => setShowModal(true)}
-      style={{ 'background-image': `url(${src})` }}
+      src={src}
       class={`${styles.GalleryCard} ${square ? 'square' : ''}`} />
     <Show when={showModal()}>
       <Portal mount={document.body}>
