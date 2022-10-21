@@ -29,7 +29,7 @@ const Waves = () => {
            `L${0} ${WAVE_HEIGHT * 2}`
   }
 
-  return <svg class={styles.Svg} width={pageWidth()} height={3 * WAVE_HEIGHT} ref={svgRef}>
+  return <svg class={styles.Svg} width={pageWidth()} height={3 * WAVE_HEIGHT} ref={svgRef} aria-hidden>
     <defs>
       <linearGradient id="wave-gradient" gradientTransform="rotate(90)">
         <stop offset="5%" stop-color="var(--clr-waves-bright)" />
