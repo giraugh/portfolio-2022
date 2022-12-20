@@ -1,5 +1,12 @@
 export default [
   {
+    name: 'Fractal Crab',
+    description: 'Simple web-based fractal explorer created using WASM',
+    image: 'https://cdn.giraugh.xyz/Fractal-Crab.png',
+    link: 'https://ewanb.me/fractal-crab',
+    dark: true,
+  },
+  {
     name: 'Flow Field Fun',
     description: 'Cool little visualiser for particle physics in a flow field',
     image: 'https://cdn.giraugh.xyz/Flow-Field-Fun.png',
