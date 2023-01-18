@@ -1,5 +1,12 @@
 export default [
   {
+    name: 'Pasta of the day',
+    description: 'One stop spot for all your pasta needs',
+    image: 'https://cdn.giraugh.xyz/Pasta-of-the-Day.png',
+    link: 'https://pasta.ewanb.me',
+    dark: true,
+  },
+  {
     name: 'Fractal Crab',
     description: 'Simple web-based fractal explorer created using WASM',
     image: 'https://cdn.giraugh.xyz/Fractal-Crab.png',
