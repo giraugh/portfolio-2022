@@ -1,5 +1,12 @@
 export default [
   {
+    name: 'Solar and Sundry',
+    description: 'Painterly sci-fi webcomic',
+    image: 'https://imagedelivery.net/zthi1l8fKrUGB5ig08mq-Q/4b15df30-85c7-429e-d062-bf1d19f0fd00/public',
+    link: 'https://sas.ewanb.me',
+    dark: true,
+  },
+  {
     name: 'Pasta of the day',
     description: 'One stop spot for all your pasta needs',
     image: 'https://cdn.giraugh.xyz/Pasta-of-the-Day.png',
